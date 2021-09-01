@@ -1,7 +1,8 @@
 # qb-activeofficers
 Advanced Active Officers by NevoG converted to QBCore
 
-Requirements: - qb-core
+Requirements:
+- qb-core
 - qb-policejob
 
 Preview:
