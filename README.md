@@ -5,6 +5,10 @@ Requirements:
 - qb-core
 - qb-policejob
 
+Commands:
+- /plist 0 - For the draggable plist
+- /callsign (callsign)
+
 
 Preview:
 
