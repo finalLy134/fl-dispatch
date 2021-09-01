@@ -1,0 +1,72 @@
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    padding: 0%;
+    margin: 0%;
+    font-family: calibri;
+    color: white;
+}
+
+* {
+    user-select: none;
+}
+
+.app {
+    display: none;
+    position: absolute;
+    right: 5%;
+    top: 40%;
+    width: 16%;
+    height: auto;
+
+    -webkit-box-shadow: 0px 0px 21px -1px rgba(0,0,0,0.68);
+    -moz-box-shadow: 0px 0px 21px -1px rgba(0,0,0,0.68);
+    box-shadow: 0px 0px 21px -1px rgba(0,0,0,0.68);
+    background-color:RGBA(8,9,10, 0.8);
+}
+
+.title {
+    padding: 3%;
+    text-align: center;
+    background-color:RGBA(5,4,5, 038);
+    color: lightblue;
+    font-weight: bold;
+    font-size: 1.5vh;
+}
+
+.officers {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    padding-bottom: 2.5%;
+    padding-top: 1.5%;
+}
+
+.officer {
+    font-size: 1.4vh;
+    padding: 1.5%;
+    margin-left: 1%;
+    margin-top: 0.5%;
+    margin-bottom: 0.5%;
+}
+
+.officers .callsign {
+    font-size: 1.2vh;
+    padding: 1.4%;
+    background-color: RGBA(166,184,11, 0.6);
+    border-radius: 3px;
+    margin-left: 1%;
+}
+
+.officers .name {
+    margin-left: 1%;
+}
+
+.duty {
+    color: rgb(0,170,0);
+}
+
+.offduty {
+    color:rgb(250,0,0);
+}
