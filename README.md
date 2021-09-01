@@ -1,6 +1,5 @@
 # qb-activeofficers
 Advanced Active Officers by NevoG converted to QBCore
-
 ESX Script:
 https://forum.cfx.re/t/release-fivem-advanced-active-officers/1798459
 
