@@ -7,7 +7,7 @@ Requirements:
 
 Commands:
 - /plist 0 - For the draggable plist
-- /callsign (callsign)
+- /callsign - To set your callsign
 
 
 Preview:
