@@ -1,7 +1,14 @@
 local HTML = ""
 local CallSigns = {}
 
-local QBCore = exports['qb-core']:GetCoreObject()
+QBCore = nil 
+
+Citizen.CreateThread(function()
+    while QBCore == nil do
+        TriggerEvent('QBCore:GetObject', function(obj) QBCore = obj end)
+        Citizen.Wait(0)
+    end
+end)
 
 RegisterCommand("plist", function(source, args)
     local src = source
