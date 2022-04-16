@@ -1,14 +1,7 @@
 local HTML = ""
 local CallSigns = {}
 
-QBCore = nil 
-
-Citizen.CreateThread(function()
-    while QBCore == nil do
-        TriggerEvent('QBCore:GetObject', function(obj) QBCore = obj end)
-        Citizen.Wait(0)
-    end
-end)
+local QBCore = exports['qb-core']:GetCoreObject()
 
 RegisterCommand("plist", function(source, args)
     local src = source
@@ -35,7 +28,7 @@ RegisterCommand("callsign", function(source, args)
             CallSigns[xPlayer.PlayerData.license] = xPlayer.PlayerData.source
             SaveResourceFile(GetCurrentResourceName(), "callsigns.json", json.encode(CallSigns))
             TriggerEvent("nv:officers:refresh")
-            TriggerClientEvent('QBCore:Notify', source, "Restored Callsign.", "success")
+            TriggerClientEvent('QBCore:Notify', source, "Restored Callsign", "success")
         else
             CallSigns[xPlayer.PlayerData.license] = args[1]
             SaveResourceFile(GetCurrentResourceName(), "callsigns.json", json.encode(CallSigns))
