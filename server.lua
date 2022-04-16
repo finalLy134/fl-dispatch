@@ -28,7 +28,7 @@ RegisterCommand("callsign", function(source, args)
             CallSigns[xPlayer.PlayerData.license] = xPlayer.PlayerData.source
             SaveResourceFile(GetCurrentResourceName(), "callsigns.json", json.encode(CallSigns))
             TriggerEvent("nv:officers:refresh")
-            TriggerClientEvent('QBCore:Notify', source, "Restored Callsign", "success")
+            TriggerClientEvent('QBCore:Notify', source, "Restored Callsign.", "success")
         else
             CallSigns[xPlayer.PlayerData.license] = args[1]
             SaveResourceFile(GetCurrentResourceName(), "callsigns.json", json.encode(CallSigns))
