@@ -9,6 +9,9 @@ Commands:
 - /plist 0 - For the draggable plist
 - /callsign - To set your callsign
 
+Buttons:
+- = for Drag Menu
+- - for Toggle Menu
 
 Preview:
 
