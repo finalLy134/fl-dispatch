@@ -26,11 +26,13 @@ RegisterCommand("callsign", function(source, args)
     if xPlayer and (xPlayer.PlayerData.job.name == 'police') and args[1] then
         if args[1] == 'none' then
             CallSigns[xPlayer.PlayerData.license] = xPlayer.PlayerData.source
+            TriggerEvent("nv:officers:refresh")
             SaveResourceFile(GetCurrentResourceName(), "callsigns.json", json.encode(CallSigns))
             TriggerEvent("nv:officers:refresh")
             TriggerClientEvent('QBCore:Notify', source, "Restored Callsign", "success")
         else
             CallSigns[xPlayer.PlayerData.license] = args[1]
+            TriggerEvent("nv:officers:refresh")
             SaveResourceFile(GetCurrentResourceName(), "callsigns.json", json.encode(CallSigns))
             TriggerEvent("nv:officers:refresh")
             TriggerClientEvent('QBCore:Notify', source, "Updated Callsign: " .. args[1], "success")
@@ -58,7 +60,21 @@ AddEventHandler("nv:officers:refresh", function()
             end
             
             local callSign = CallSigns[xPlayer.PlayerData.license] ~= nil and CallSigns[xPlayer.PlayerData.license] or xPlayer.PlayerData.source
-            new = new .. '<div class="officer"><span class="callsign">' .. callSign .. '</span> <span class="name">' .. name .. '</span> | <span class="grade">' .. xPlayer.PlayerData.job.grade.name .. '</span> - <span class="' .. dutyClass .. '">' .. duty .. '</span></div>'
+            if (callSign >= Config.Command_Min and callSign <= Config.Command_Max) then
+                new = new .. '<div class="officer"><span class="callsign-command">' .. callSign .. '</span> <span class="name">' .. name .. '</span> | <span class="grade">' .. xPlayer.PlayerData.job.grade.name .. '</span> - <span class="' .. dutyClass .. '">' .. duty .. '</span></div>'
+            elseif (callSign >= Config.Detective_Min and callSign <= Config.Detective_Max) then
+                new = new .. '<div class="officer"><span class="callsign-detective">' .. callSign .. '</span> <span class="name">' .. name .. '</span> | <span class="grade">' .. xPlayer.PlayerData.job.grade.name .. '</span> - <span class="' .. dutyClass .. '">' .. duty .. '</span></div>'
+            elseif (callSign >= Config.Swat_Min and callSign <= Config.Swat_Max) then
+                new = new .. '<div class="officer"><span class="callsign-swat">' .. callSign .. '</span> <span class="name">' .. name .. '</span> | <span class="grade">' .. xPlayer.PlayerData.job.grade.name .. '</span> - <span class="' .. dutyClass .. '">' .. duty .. '</span></div>'
+            elseif (callSign >= Config.Bcso_Min and callSign <= Config.Bcso_Max) then
+                new = new .. '<div class="officer"><span class="callsign-bcso">' .. callSign .. '</span> <span class="name">' .. name .. '</span> | <span class="grade">' .. xPlayer.PlayerData.job.grade.name .. '</span> - <span class="' .. dutyClass .. '">' .. duty .. '</span></div>'
+            elseif (callSign >= Config.Troopers_Min and callSign <= Config.Troopers_Min) then
+                new = new .. '<div class="officer"><span class="callsign-troopers">' .. callSign .. '</span> <span class="name">' .. name .. '</span> | <span class="grade">' .. xPlayer.PlayerData.job.grade.name .. '</span> - <span class="' .. dutyClass .. '">' .. duty .. '</span></div>'
+            elseif (callSign >= Config.Rangers_Min and callSign <= Config.Rangers_Min) then
+                new = new .. '<div class="officer"><span class="callsign-rangers">' .. callSign .. '</span> <span class="name">' .. name .. '</span> | <span class="grade">' .. xPlayer.PlayerData.job.grade.name .. '</span> - <span class="' .. dutyClass .. '">' .. duty .. '</span></div>'
+            else
+                new = new .. '<div class="officer"><span class="callsign">' .. callSign .. '</span> <span class="name">' .. name .. '</span> | <span class="grade">' .. xPlayer.PlayerData.job.grade.name .. '</span> - <span class="' .. dutyClass .. '">' .. duty .. '</span></div>'
+            end
         end
     end
 
