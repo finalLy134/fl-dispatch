@@ -54,7 +54,55 @@ body {
 .officers .callsign {
     font-size: 1.2vh;
     padding: 1.4%;
-    background-color: RGBA(166,184,11, 0.6);
+    background-color: RGBA(100,100,255, 0.6);
+    border-radius: 3px;
+    margin-left: 1%;
+}
+
+.officers .callsign-command {
+    font-size: 1.2vh;
+    padding: 1.4%;
+    background-color: RGBA(255,0,0, 0.6);
+    border-radius: 3px;
+    margin-left: 1%;
+}
+
+.officers .callsign-swat {
+    font-size: 1.2vh;
+    padding: 1.4%;
+    background-color: RGBA(200,200,200, 0.6);
+    border-radius: 3px;
+    margin-left: 1%;
+}
+
+.officers .callsign-rangers {
+    font-size: 1.2vh;
+    padding: 1.4%;
+    background-color: RGBA(0,255,0, 0.6);
+    border-radius: 3px;
+    margin-left: 1%;
+}
+
+.officers .callsign-bcso {
+    font-size: 1.2vh;
+    padding: 1.4%;
+    background-color: RGBA(191,136,11, 0.6);
+    border-radius: 3px;
+    margin-left: 1%;
+}
+
+.officers .callsign-troopers {
+    font-size: 1.2vh;
+    padding: 1.4%;
+    background-color: RGBA(0,0,255, 0.6);
+    border-radius: 3px;
+    margin-left: 1%;
+}
+
+.officers .callsign-detective {
+    font-size: 1.2vh;
+    padding: 1.4%;
+    background-color: RGBA(0,0,0, 0.6);
     border-radius: 3px;
     margin-left: 1%;
 }
