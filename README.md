@@ -11,7 +11,7 @@ Commands:
 
 Buttons:
 - = for Drag Menu
-- - for Toggle Menu
+- \- for Toggle Menu
 
 Preview:
 
