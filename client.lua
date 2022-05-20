@@ -1,3 +1,5 @@
+local QBCore = exports['qb-core']:GetCoreObject()
+
 local Enabled = false
 
 CreateThread(function()
@@ -11,6 +13,18 @@ CreateThread(function()
     end
 
     TriggerServerEvent("nv:officers:refresh")
+end)
+
+CreateThread(function()
+    while true do
+        Wait(0)
+        if IsControlJustPressed(1, 83) then
+            TriggerEvent("nv:officers:open", 'drag')
+        end
+        if IsControlJustPressed(1, 84) then
+            TriggerEvent("nv:officers:open", 'toggle')
+        end
+    end
 end)
 
 RegisterNetEvent('QBCore:Client:OnJobUpdate')
