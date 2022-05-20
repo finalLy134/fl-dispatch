@@ -4,7 +4,7 @@ games {"gta5"}
 
 author "finalLy#1138"
 description "QB Advanced Active Officers System"
-version "1.0.0"
+version "1.0.1"
 
 ui_page "html/index.html"
 
