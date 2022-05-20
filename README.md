@@ -6,8 +6,9 @@ Requirements:
 - qb-policejob
 
 Commands:
-- /plist 0 - For the draggable plist
-- /callsign - To set your callsign
+- /plist 0 - Drag Menu
+- /plist - Toggle Menu
+- /callsign [callsign] - To set your callsign
 
 Buttons:
 - = for Drag Menu
