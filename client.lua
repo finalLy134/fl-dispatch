@@ -18,7 +18,7 @@ end)
 CreateThread(function()
     while true do
         Wait(0)
-        if xPlayer.PlayerData.job.name == "police" then
+        if QBCore.Functions.GetPlayerData().job.name == "police" then
             if IsControlJustPressed(1, 83) then
                 TriggerEvent("nv:officers:open", 'drag')
             end
