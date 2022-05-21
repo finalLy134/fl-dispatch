@@ -26,7 +26,7 @@ RegisterCommand("callsign", function(source, args)
 
     if xPlayer and (xPlayer.PlayerData.job.name == 'police') and args[1] then
         if args[1] == 'none' then
-            CallSigns[xPlayer.PlayerData.license] = xPlayer.PlayerData.source
+            CallSigns[xPlayer.PlayerData.license] = "NO TAG"
             TriggerEvent("nv:officers:refresh")
             SaveResourceFile(GetCurrentResourceName(), "callsigns.json", json.encode(CallSigns))
             TriggerEvent("nv:officers:refresh")
