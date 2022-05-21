@@ -15,20 +15,6 @@ CreateThread(function()
     TriggerServerEvent("nv:officers:refresh")
 end)
 
-CreateThread(function()
-    while true do
-        Wait(5)
-        if QBCore.Functions.GetPlayerData().job.name == "police" then
-            if IsControlJustPressed(1, 83) then
-                TriggerEvent("nv:officers:open", 'drag')
-            end
-            if IsControlJustPressed(1, 84) then
-                TriggerEvent("nv:officers:open", 'toggle')
-            end
-        end
-    end
-end)
-
 -- Refresh Menu --
 CreateThread(function()
     while true do
@@ -40,7 +26,8 @@ end)
 RegisterNetEvent('QBCore:Client:OnJobUpdate')
 AddEventHandler('QBCore:Client:OnJobUpdate', function(jobInfo)
     if Enabled then
-        if QBCore.Functions.GetPlayerData().job.name ~= "police" then
+        xPlayer = QBCore.Functions.GetPlayerData()
+        if xPlayer.job.name ~= "police" then
             SendNUIMessage({ ['action'] = "close" })
         end
     end
