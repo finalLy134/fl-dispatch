@@ -17,7 +17,7 @@ end)
 
 CreateThread(function()
     while true do
-        Wait(2)
+        Wait(5)
         if QBCore.Functions.GetPlayerData().job.name == "police" then
             if IsControlJustPressed(1, 83) then
                 TriggerEvent("nv:officers:open", 'drag')
@@ -40,7 +40,7 @@ end)
 RegisterNetEvent('QBCore:Client:OnJobUpdate')
 AddEventHandler('QBCore:Client:OnJobUpdate', function(jobInfo)
     if Enabled then
-        if QBCore.Functions.GetPlayerData().job.name == "police" then
+        if QBCore.Functions.GetPlayerData().job.name ~= "police" then
             SendNUIMessage({ ['action'] = "close" })
         end
     end
