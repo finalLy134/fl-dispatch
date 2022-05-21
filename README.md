@@ -6,6 +6,7 @@ Need Help? My Discord: finalLy#1138
 Requirements:
 - qb-core
 - qb-policejob
+- pma-voice
 
 Commands:
 - /plist 0 - Drag Menu
