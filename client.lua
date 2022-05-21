@@ -18,11 +18,13 @@ end)
 CreateThread(function()
     while true do
         Wait(0)
-        if IsControlJustPressed(1, 83) then
-            TriggerEvent("nv:officers:open", 'drag')
-        end
-        if IsControlJustPressed(1, 84) then
-            TriggerEvent("nv:officers:open", 'toggle')
+        if xPlayer.PlayerData.job.name == "police" then
+            if IsControlJustPressed(1, 83) then
+                TriggerEvent("nv:officers:open", 'drag')
+            end
+            if IsControlJustPressed(1, 84) then
+                TriggerEvent("nv:officers:open", 'toggle')
+            end
         end
     end
 end)
