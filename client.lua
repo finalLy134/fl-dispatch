@@ -27,16 +27,22 @@ CreateThread(function()
     end
 end)
 
+-- Refresh Menu --
+CreateThread(function()
+    while true do
+        Wait(3000)
+        TriggerServerEvent("nv:officers:refresh")
+    end
+end)
+
 RegisterNetEvent('QBCore:Client:OnJobUpdate')
 AddEventHandler('QBCore:Client:OnJobUpdate', function(jobInfo)
-    PlayerJob = JobInfo
-
     if Enabled then
-        if JobInfo.name == "police" then
+        if xPlayer.PlayerData.job.name == "police" then
             SendNUIMessage({ ['action'] = "close" })
         end
     end
-
+    
     TriggerServerEvent("nv:officers:refresh")
 end)
 
