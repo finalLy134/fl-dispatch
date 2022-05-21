@@ -69,7 +69,8 @@ AddEventHandler("nv:officers:refresh", function()
                 radioLabel = radioChannel .. 'hz'
             end
 
-            local callSign = CallSigns[xPlayer.PlayerData.license] ~= nil and CallSigns[xPlayer.PlayerData.license] or xPlayer.PlayerData.source
+            local callSign = CallSigns[xPlayer.PlayerData.license] ~= nil and CallSigns[xPlayer.PlayerData.license] or "NO TAG"
+
             if (callSign >= Config.Command_Min and callSign <= Config.Command_Max) then
                 new = new .. '<div class="officer"><span class="callsign-command">' .. callSign .. '</span> <span class="name">' .. name .. '</span> | <span class="grade">' .. xPlayer.PlayerData.job.grade.name .. '</span> - <span class="' .. dutyClass .. '">' .. duty .. '</span> - <span class="radio">' .. radioLabel .. '</span></div>'
             elseif (callSign >= Config.Detective_Min and callSign <= Config.Detective_Max) then
