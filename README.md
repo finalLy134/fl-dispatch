@@ -13,7 +13,7 @@ Commands:
 - /plist - Toggle Menu
 - /callsign [callsign] - To set your callsign
 
-Buttons:
+Buttons: (Currently down - Will be added in a couple days)
 - = for Drag Menu
 - \- for Toggle Menu
 
