@@ -1,5 +1,5 @@
 # fl-activeofficers
-Event-Based Advanced QBCore Active Officers
+Event-Based Advanced QBCore Active Officers (Originally by NevoG)
 
 Need Help? My Discord: finalLy#1138
 
