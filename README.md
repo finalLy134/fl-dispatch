@@ -1,6 +1,6 @@
 # fl-activeofficers
-Event-Based Advanced QBCore Active Officers
-Originally Made by NevoG
+Event-Based Advanced QBCore Active Officers,
+Originally Made by NevoG,
 Link to old script [here](https://forum.cfx.re/t/release-fivem-advanced-active-officers/1798459).
 
 Need Help? My Discord: finalLy#1138
