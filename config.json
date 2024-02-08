@@ -1,0 +1,86 @@
+{
+  "defaultColors": {
+    "backgroundColor": "rgb(47, 69, 86)",
+    "foregroundColor": "white"
+  },
+  "special": [
+    {
+      "prefix": "S",
+      "colors": {
+        "backgroundColor": "red",
+        "foregroundColor": "white"
+      }
+    },
+    {
+      "prefix": "F",
+      "colors": {
+        "backgroundColor": "green",
+        "foregroundColor": "white"
+      }
+    },
+    {
+      "prefix": "V",
+      "colors": {
+        "backgroundColor": "#BA7D45",
+        "foregroundColor": "white"
+      }
+    },
+    {
+      "prefix": "H",
+      "colors": {
+        "backgroundColor": "#636364",
+        "foregroundColor": "white"
+      }
+    }
+  ],
+  "ranges": [
+    {
+      "start": 200,
+      "end": 210,
+      "colors": {
+        "backgroundColor": "rgb(235, 1, 2)",
+        "foregroundColor": "white"
+      }
+    },
+    {
+      "start": 300,
+      "end": 330,
+      "colors": {
+        "backgroundColor": "rgb(20, 10, 11)",
+        "foregroundColor": "white"
+      }
+    },
+    {
+      "start": 330,
+      "end": 390,
+      "colors": {
+        "backgroundColor": "rgb(125, 121, 119)",
+        "foregroundColor": "white"
+      }
+    },
+    {
+      "start": 400,
+      "end": 440,
+      "colors": {
+        "backgroundColor": "rgb(210, 76, 3)",
+        "foregroundColor": "white"
+      }
+    },
+    {
+      "start": 450,
+      "end": 490,
+      "colors": {
+        "backgroundColor": "rgb(3, 61, 215)",
+        "foregroundColor": "white"
+      }
+    },
+    {
+      "start": 500,
+      "end": 550,
+      "colors": {
+        "backgroundColor": "rgb(3, 97, 0)",
+        "foregroundColor": "white"
+      }
+    }
+  ]
+}

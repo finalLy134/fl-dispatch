@@ -1,17 +1,15 @@
-local HTML = ""
-local CallSigns = {}
-local radio = 0
+QBCore = exports['qb-core']:GetCoreObject()
 
-local QBCore = exports['qb-core']:GetCoreObject()
+local pTalking = {}
 
-RegisterCommand("plist", function(source, args)
+QBCore.Commands.Add('plist', "Opens Active Officers List (Police Only)", {}, false, function(source, args)
     local src = source
-    local xPlayer = QBCore.Functions.GetPlayer(src)
+    local Player = QBCore.Functions.GetPlayer(src)
 
-    if xPlayer.PlayerData.job.name == "police" then
+    if Player.PlayerData.job.name == "police" and Player.PlayerData.job.onduty then
         local type = "toggle"
         TriggerEvent("nv:officers:refresh")
-        
+
         if args[1] == "0" then
             type = "drag"
         end
@@ -20,97 +18,83 @@ RegisterCommand("plist", function(source, args)
     end
 end)
 
-RegisterCommand("callsign", function(source, args)
+RegisterNetEvent('pma-voice:setTalkingOnRadio')
+AddEventHandler('pma-voice:setTalkingOnRadio', function(talking)
     local src = source
-    local xPlayer = QBCore.Functions.GetPlayer(source)
+    local channel = GetRadioChannel(src)
+    local players = exports['pma-voice']:getPlayersInRadioChannel(channel)
 
-    if xPlayer and (xPlayer.PlayerData.job.name == 'police') and args[1] then
-        if args[1] == 'none' then
-            CallSigns[xPlayer.PlayerData.license] = "NO TAG"
-            TriggerEvent("nv:officers:refresh")
-            SaveResourceFile(GetCurrentResourceName(), "callsigns.json", json.encode(CallSigns))
-            TriggerEvent("nv:officers:refresh")
-            TriggerClientEvent('QBCore:Notify', source, "Restored Callsign", "success")
-        else
-            CallSigns[xPlayer.PlayerData.license] = args[1]
-            TriggerEvent("nv:officers:refresh")
-            SaveResourceFile(GetCurrentResourceName(), "callsigns.json", json.encode(CallSigns))
-            TriggerEvent("nv:officers:refresh")
-            TriggerClientEvent('QBCore:Notify', source, "Updated Callsign: " .. args[1], "success")
-        end
+    pTalking[tostring(src)] = talking
+
+    -- Loop all the players in the same radio channel as the current player
+    for playerSrc, _ in pairs(players) do
+        -- Send them whether he's talking or not
+        TriggerClientEvent('nv:officers:setTalkingOnRadio', playerSrc, src, talking)
     end
 end)
 
-RegisterServerEvent("nv:officers:refresh")
-AddEventHandler("nv:officers:refresh", function()
-    local new = ""
-
-    for k,v in pairs(QBCore.Functions.GetPlayers()) do
-        local xPlayer = QBCore.Functions.GetPlayer(v)
-        if xPlayer and (xPlayer.PlayerData.job.name == 'police') then
-            local name = GetName(v)
-            local dutyClass = ""
-            local duty = ""
-            
-            if xPlayer.PlayerData.job.onduty then
-                dutyClass = 'duty'
-                duty = "On Duty"
-            else
-                dutyClass = 'offduty'
-                duty = "Off Duty"
-            end
-            
-            local radioChannel = GetRadioChannel(v)
-            local radioLabel = ""
-
-            if radioChannel == 0 then
-                radioLabel = "Off"
-            else
-                radioLabel = radioChannel .. 'hz'
-            end
-
-            local callSign = CallSigns[xPlayer.PlayerData.license] ~= nil and CallSigns[xPlayer.PlayerData.license] or "NO TAG"
-
-            if (callSign >= Config.Command_Min and callSign <= Config.Command_Max) then
-                new = new .. '<div class="officer"><span class="callsign-command">' .. callSign .. '</span> <span class="name">' .. name .. '</span> | <span class="grade">' .. xPlayer.PlayerData.job.grade.name .. '</span> - <span class="' .. dutyClass .. '">' .. duty .. '</span> - <span class="radio">' .. radioLabel .. '</span></div>'
-            elseif (callSign >= Config.Detective_Min and callSign <= Config.Detective_Max) then
-                new = new .. '<div class="officer"><span class="callsign-detective">' .. callSign .. '</span> <span class="name">' .. name .. '</span> | <span class="grade">' .. xPlayer.PlayerData.job.grade.name .. '</span> - <span class="' .. dutyClass .. '">' .. duty .. '</span> - <span class="radio">' .. radioLabel .. '</span></div>'
-            elseif (callSign >= Config.Swat_Min and callSign <= Config.Swat_Max) then
-                new = new .. '<div class="officer"><span class="callsign-swat">' .. callSign .. '</span> <span class="name">' .. name .. '</span> | <span class="grade">' .. xPlayer.PlayerData.job.grade.name .. '</span> - <span class="' .. dutyClass .. '">' .. duty .. '</span> - <span class="radio">' .. radioLabel .. '</span></div>'
-            elseif (callSign >= Config.Bcso_Min and callSign <= Config.Bcso_Max) then
-                new = new .. '<div class="officer"><span class="callsign-bcso">' .. callSign .. '</span> <span class="name">' .. name .. '</span> | <span class="grade">' .. xPlayer.PlayerData.job.grade.name .. '</span> - <span class="' .. dutyClass .. '">' .. duty .. '</span> - <span class="radio">' .. radioLabel .. '</span></div>'
-            elseif (callSign >= Config.Troopers_Min and callSign <= Config.Troopers_Min) then
-                new = new .. '<div class="officer"><span class="callsign-troopers">' .. callSign .. '</span> <span class="name">' .. name .. '</span> | <span class="grade">' .. xPlayer.PlayerData.job.grade.name .. '</span> - <span class="' .. dutyClass .. '">' .. duty .. '</span> - <span class="radio">' .. radioLabel .. '</span></div>'
-            elseif (callSign >= Config.Rangers_Min and callSign <= Config.Rangers_Min) then
-                new = new .. '<div class="officer"><span class="callsign-rangers">' .. callSign .. '</span> <span class="name">' .. name .. '</span> | <span class="grade">' .. xPlayer.PlayerData.job.grade.name .. '</span> - <span class="' .. dutyClass .. '">' .. duty .. '</span> - <span class="radio">' .. radioLabel .. '</span></div>'
-            else
-                new = new .. '<div class="officer"><span class="callsign">' .. callSign .. '</span> <span class="name">' .. name .. '</span> | <span class="grade">' .. xPlayer.PlayerData.job.grade.name .. '</span> - <span class="' .. dutyClass .. '">' .. duty .. '</span> - <span class="radio">' .. radioLabel .. '</span></div>'
-            end
-        end
-    end
-
-    HTML = new
-    TriggerClientEvent("nv:officers:refresh", -1, HTML)
+RegisterNetEvent('pma-voice:setPlayerRadio', function(channel)
+    local src = source
+    TriggerClientEvent('nv:officers:setPlayerRadio', -1, src, channel)
+    TriggerClientEvent('nv:officers:setTalkingOnRadio', -1, src, false)
 end)
 
-function GetName(source)
-    local xPlayer = QBCore.Functions.GetPlayer(source)
+RegisterNetEvent('QBCore:Server:OnPlayerUnload', function(source)
+    Wait(3500) -- Waiting for last player update, dont touch this line
+    local src = source
+    TriggerClientEvent('nv:officers:removePlayer', -1, src)
+end)
 
-    if xPlayer ~= nil and xPlayer.PlayerData.charinfo.firstname ~= nil and xPlayer.PlayerData.charinfo.lastname ~= nil then
-         return xPlayer.PlayerData.charinfo.firstname .. ' ' .. xPlayer.PlayerData.charinfo.lastname
-    else
-        return ""
+AddEventHandler('playerDropped', function(reason)
+    local src = source
+    TriggerClientEvent('nv:officers:removePlayer', -1, src)
+end)
+
+AddEventHandler('QBCore:Server:OnMetaDataUpdate', function(source, meta, val)
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+
+    if Player.PlayerData.job.name == "police" and Player.PlayerData.job.onduty then
+        TriggerEvent("nv:officers:refresh")
     end
-end
+end)
 
 function GetRadioChannel(source)
     return Player(source).state['radioChannel']
 end
 
-CreateThread(function()
-    local result = json.decode(LoadResourceFile(GetCurrentResourceName(), "callsigns.json"))
+RegisterServerEvent("nv:officers:refresh")
+AddEventHandler("nv:officers:refresh", function(ch)
+    local data = {}
+    local src = source
 
-    if result then
-        CallSigns = result
+    for k, v in pairs(QBCore.Functions.GetPlayers()) do
+        local Player = QBCore.Functions.GetPlayer(v)
+        if Player and Player.PlayerData.job.name == 'police' and Player.PlayerData.job.onduty then
+            local name = Player.PlayerData.charinfo.firstname .. " " .. Player.PlayerData.charinfo.lastname
+            local grade = Player.PlayerData.job.grade.name;
+            local callsign = Player.PlayerData.metadata['callsign'];
+            local isTalking = pTalking[tostring(v)] or false
+            local channel = 0
+
+            if ch then
+                channel = ch
+            else
+                channel = GetRadioChannel(v)
+            end
+
+            table.insert(data, {
+                src = v,
+                name = name,
+                grade = grade,
+                channel = channel,
+                callsign = callsign,
+                isTalking = isTalking,
+            })
+        else
+            TriggerClientEvent("nv:officers:open", v, 'force_exit')
+        end
     end
+
+    TriggerClientEvent("nv:officers:refresh", -1, data)
 end)
