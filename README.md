@@ -12,8 +12,6 @@ Code Changes Requirements:
 
 Add this line at `qb-core/server/player.lua` line 272:
 
-`player.lua` > self.Functions.SetMetaData(meta, val):
-
 `TriggerEvent('QBCore:Server:OnMetaDataUpdate', self.PlayerData.source, meta, val)`
 
 Your method should look like this:
