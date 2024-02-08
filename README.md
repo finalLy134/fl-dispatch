@@ -35,7 +35,7 @@ end
 **Commands:**
 - /plist 0 - Drag Menu
 - /plist - Toggle Menu
-- /callsign [callsign] - To set your callsign (QBCore Command)
+- /callsign `[callsign]` - To set your callsign (QBCore Command)
 
 **Preview:**
 
