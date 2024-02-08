@@ -1,5 +1,5 @@
-# qb-activeofficers
-Event Based Advanced QBCore Active Officers
+# fl-activeofficers
+Event-Based Advanced QBCore Active Officers
 
 Need Help? My Discord: finalLy#1138
 
