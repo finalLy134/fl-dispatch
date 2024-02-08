@@ -12,7 +12,9 @@ Need Help? My Discord: finalLy#1138
 
 Add this line at `qb-core/server/player.lua` line 272:
 
-`TriggerEvent('QBCore:Server:OnMetaDataUpdate', self.PlayerData.source, meta, val)`
+```lua
+TriggerEvent('QBCore:Server:OnMetaDataUpdate', self.PlayerData.source, meta, val)
+```
 
 Your method should look like this:
 
