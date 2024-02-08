@@ -1,5 +1,5 @@
 # qb-activeofficers
-Advanced Active Officers by NevoG converted to QBCore
+Advanced QBCore Active Officers
 
 Need Help? My Discord: finalLy#1138
 
@@ -11,11 +11,7 @@ Requirements:
 Commands:
 - /plist 0 - Drag Menu
 - /plist - Toggle Menu
-- /callsign [callsign] - To set your callsign
-
-Buttons: (Currently down - Will be added in a couple days)
-- = for Drag Menu
-- \- for Toggle Menu
+- /callsign [callsign] - To set your callsign (QBCore Command)
 
 Preview:
 
