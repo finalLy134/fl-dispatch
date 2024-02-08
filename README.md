@@ -16,7 +16,7 @@ Add this line at `qb-core/server/player.lua` line 272:
 
 Your method should look like this:
 
-```
+```lua
 function self.Functions.SetMetaData(meta, val)
     if not meta or type(meta) ~= 'string' then return end
     if meta == 'hunger' or meta == 'thirst' then
