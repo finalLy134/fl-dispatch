@@ -10,15 +10,15 @@ Requirements:
 
 Code Changes Requirements:
 
-Add this line at qb-core/server/player.lua line 272:
+Add this line at `qb-core/server/player.lua` line 272:
 
 player.lua > self.Functions.SetMetaData(meta, val):
 
 [ TriggerEvent('QBCore:Server:OnMetaDataUpdate', self.PlayerData.source, meta, val) ]
 
-
 Your method should look like this:
 
+```
 function self.Functions.SetMetaData(meta, val)
     if not meta or type(meta) ~= 'string' then return end
     if meta == 'hunger' or meta == 'thirst' then
@@ -30,6 +30,7 @@ function self.Functions.SetMetaData(meta, val)
     -- Triggering our event:
     TriggerEvent('QBCore:Server:OnMetaDataUpdate', self.PlayerData.source, meta, val)
 end
+```
 
 Commands:
 - /plist 0 - Drag Menu
