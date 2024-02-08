@@ -1,0 +1,4 @@
+The original creator of the base of this script is NevoG,
+This script was converted from ESX to QBCore in 2022 by finalLy (me) and I continued to program it after that.
+I kept adding new features to the script and I just really loved the concept.
+This script is purely for the community and I have never done anything profitable with it.
