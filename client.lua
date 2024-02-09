@@ -10,13 +10,13 @@ CreateThread(function()
     end
 
     PlayerJob = QBCore.Functions.GetPlayerData().job
-    TriggerServerEvent("nv:officers:refresh")
+    TriggerServerEvent("fl-activeofficers:server:refresh")
 end)
 
 RegisterNetEvent('QBCore:Client:OnPlayerLoaded')
 AddEventHandler('QBCore:Client:OnPlayerLoaded', function()
     PlayerJob = QBCore.Functions.GetPlayerData().job
-    TriggerServerEvent("nv:officers:refresh")
+    TriggerServerEvent("fl-activeofficers:server:refresh")
 end)
 
 RegisterNetEvent('QBCore:Client:OnJobUpdate')
@@ -27,11 +27,11 @@ AddEventHandler('QBCore:Client:OnJobUpdate', function(jobInfo)
         end
     end
 
-    TriggerServerEvent("nv:officers:refresh")
+    TriggerServerEvent("fl-activeofficers:server:refresh")
 end)
 
-RegisterNetEvent("nv:officers:open")
-AddEventHandler("nv:officers:open", function(type)
+RegisterNetEvent("fl-activeofficers:client:open")
+AddEventHandler("fl-activeofficers:client:open", function(type)
     if type == 'toggle' then
         if Enabled then
             Enabled = false
@@ -56,8 +56,8 @@ RegisterNUICallback("Close", function()
     SetNuiFocus(false, false)
 end)
 
-RegisterNetEvent("nv:officers:refresh")
-AddEventHandler("nv:officers:refresh", function(data)
+RegisterNetEvent("fl-activeofficers:client:refresh")
+AddEventHandler("fl-activeofficers:client:refresh", function(data)
     local id = GetPlayerServerId(PlayerId())
     for i, v in ipairs(data) do
         if v.src == id then
@@ -71,19 +71,19 @@ AddEventHandler("nv:officers:refresh", function(data)
     })
 end)
 
-RegisterNetEvent('nv:officers:removePlayer')
-AddEventHandler('nv:officers:removePlayer', function(src)
+RegisterNetEvent('fl-activeofficers:client:removePlayer')
+AddEventHandler('fl-activeofficers:client:removePlayer', function(src)
     SendNUIMessage({
         action = "removePlayer",
         data = {
             src = src,
         },
     })
-    TriggerServerEvent("nv:officers:refresh")
+    TriggerServerEvent("fl-activeofficers:server:refresh")
 end)
 
-RegisterNetEvent("nv:officers:setTalkingOnRadio")
-AddEventHandler("nv:officers:setTalkingOnRadio", function(src, talking)
+RegisterNetEvent("fl-activeofficers:client:setTalkingOnRadio")
+AddEventHandler("fl-activeofficers:client:setTalkingOnRadio", function(src, talking)
     SendNUIMessage({
         action = "setTalkingOnRadio",
         data = {
@@ -93,8 +93,8 @@ AddEventHandler("nv:officers:setTalkingOnRadio", function(src, talking)
     })
 end)
 
-RegisterNetEvent("nv:officers:setPlayerRadio")
-AddEventHandler("nv:officers:setPlayerRadio", function(src, channel)
+RegisterNetEvent("fl-activeofficers:client:setPlayerRadio")
+AddEventHandler("fl-activeofficers:client:setPlayerRadio", function(src, channel)
     SendNUIMessage({
         action = "setPlayerRadio",
         data = {

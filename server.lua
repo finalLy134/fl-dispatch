@@ -8,13 +8,13 @@ QBCore.Commands.Add('plist', "Opens Active Officers List (Police Only)", {}, fal
 
     if Player.PlayerData.job.name == "police" and Player.PlayerData.job.onduty then
         local type = "toggle"
-        TriggerEvent("nv:officers:refresh")
+        TriggerEvent("fl-activeofficers:server:refresh")
 
         if args[1] == "0" then
             type = "drag"
         end
 
-        TriggerClientEvent("nv:officers:open", src, type)
+        TriggerClientEvent("fl-activeofficers:client:open", src, type)
     end
 end)
 
@@ -29,25 +29,25 @@ AddEventHandler('pma-voice:setTalkingOnRadio', function(talking)
     -- Loop all the players in the same radio channel as the current player
     for playerSrc, _ in pairs(players) do
         -- Send them whether he's talking or not
-        TriggerClientEvent('nv:officers:setTalkingOnRadio', playerSrc, src, talking)
+        TriggerClientEvent('fl-activeofficers:client:setTalkingOnRadio', playerSrc, src, talking)
     end
 end)
 
 RegisterNetEvent('pma-voice:setPlayerRadio', function(channel)
     local src = source
-    TriggerClientEvent('nv:officers:setPlayerRadio', -1, src, channel)
-    TriggerClientEvent('nv:officers:setTalkingOnRadio', -1, src, false)
+    TriggerClientEvent('fl-activeofficers:client:setPlayerRadio', -1, src, channel)
+    TriggerClientEvent('fl-activeofficers:client:setTalkingOnRadio', -1, src, false)
 end)
 
 RegisterNetEvent('QBCore:Server:OnPlayerUnload', function(source)
     Wait(3500) -- Waiting for last player update, dont touch this line
     local src = source
-    TriggerClientEvent('nv:officers:removePlayer', -1, src)
+    TriggerClientEvent('fl-activeofficers:client:removePlayer', -1, src)
 end)
 
 AddEventHandler('playerDropped', function(reason)
     local src = source
-    TriggerClientEvent('nv:officers:removePlayer', -1, src)
+    TriggerClientEvent('fl-activeofficers:client:removePlayer', -1, src)
 end)
 
 AddEventHandler('QBCore:Server:OnMetaDataUpdate', function(source, meta, val)
@@ -55,7 +55,7 @@ AddEventHandler('QBCore:Server:OnMetaDataUpdate', function(source, meta, val)
     local Player = QBCore.Functions.GetPlayer(src)
 
     if Player.PlayerData.job.name == "police" and Player.PlayerData.job.onduty then
-        TriggerEvent("nv:officers:refresh")
+        TriggerEvent("fl-activeofficers:server:refresh")
     end
 end)
 
@@ -63,8 +63,8 @@ function GetRadioChannel(source)
     return Player(source).state['radioChannel']
 end
 
-RegisterServerEvent("nv:officers:refresh")
-AddEventHandler("nv:officers:refresh", function(ch)
+RegisterServerEvent("fl-activeofficers:server:refresh")
+AddEventHandler("fl-activeofficers:server:refresh", function(ch)
     local data = {}
     local src = source
 
@@ -92,9 +92,9 @@ AddEventHandler("nv:officers:refresh", function(ch)
                 isTalking = isTalking,
             })
         else
-            TriggerClientEvent("nv:officers:open", v, 'force_exit')
+            TriggerClientEvent("fl-activeofficers:client:open", v, 'force_exit')
         end
     end
 
-    TriggerClientEvent("nv:officers:refresh", -1, data)
+    TriggerClientEvent("fl-activeofficers:client:refresh", -1, data)
 end)
