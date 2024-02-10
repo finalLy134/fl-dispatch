@@ -35,7 +35,7 @@ end
 ```
 
 **Keybinds:**
-- F3 - Open Active Officers List (Changable in the `config.lua`)
+- F3 - Open Active Officers List - Changable in the `config.lua`
 
 **Commands:**
 - /plist 0 - Drag Menu
