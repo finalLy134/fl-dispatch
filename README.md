@@ -34,6 +34,9 @@ function self.Functions.SetMetaData(meta, val)
 end
 ```
 
+**Keybinds:**
+- F3 - Open Active Officers List (Changable in the `config.lua`)
+
 **Commands:**
 - /plist 0 - Drag Menu
 - /plist - Toggle Menu
