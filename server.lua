@@ -3,6 +3,10 @@ QBCore = exports['qb-core']:GetCoreObject()
 local pTalking = {}
 
 QBCore.Commands.Add('plist', "Opens Active Officers List (Police Only)", {}, false, function(source, args)
+    TriggerEvent('fl-activeofficers:server:open', source, args)
+end)
+
+RegisterServerEvent('fl-activeofficers:server:open', function(source, args)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
 
@@ -66,7 +70,6 @@ end
 RegisterServerEvent("fl-activeofficers:server:refresh")
 AddEventHandler("fl-activeofficers:server:refresh", function(ch)
     local data = {}
-    local src = source
 
     for k, v in pairs(QBCore.Functions.GetPlayers()) do
         local Player = QBCore.Functions.GetPlayer(v)
