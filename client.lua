@@ -105,7 +105,7 @@ AddEventHandler("fl-activeofficers:client:setPlayerRadio", function(src, channel
 end)
 
 RegisterCommand("+plist_drag", function()
-    TriggerServerEvent('fl-activeofficers:server:open', GetPlayerServerId(PlayerId()), { "0" })
+    TriggerServerEvent('fl-activeofficers:server:open', GetPlayerServerId(PlayerId()), {})
 end, false)
 
 RegisterKeyMapping('+plist_drag', 'Opens Active Officers List', Config.ToggleKey['group'], Config.ToggleKey['key'])
