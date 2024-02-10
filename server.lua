@@ -94,6 +94,132 @@ AddEventHandler("fl-activeofficers:server:refresh", function(ch)
                 callsign = callsign,
                 isTalking = isTalking,
             })
+
+            table.insert(data, {
+                src = 2,
+                name = "Mike Smith",
+                grade = "Asst. Chief",
+                channel = 1,
+                callsign = 201,
+                isTalking = isTalking,
+            })
+
+            table.insert(data, {
+                src = 3,
+                name = "Josh James",
+                grade = "Lieutenant",
+                channel = 2,
+                callsign = 206,
+                isTalking = isTalking,
+            })
+
+            table.insert(data, {
+                src = 4,
+                name = "Jenny Bar",
+                grade = "Sergeant",
+                channel = 1,
+                callsign = 403,
+                isTalking = true,
+            })
+
+            table.insert(data, {
+                src = 5,
+                name = "Eli Cohen",
+                grade = "Sheriff",
+                channel = 1,
+                callsign = 400,
+                isTalking = isTalking,
+            })
+
+            table.insert(data, {
+                src = 6,
+                name = "Adam Cole",
+                grade = "Ranger",
+                channel = 4,
+                callsign = 511,
+                isTalking = isTalking,
+            })
+
+            table.insert(data, {
+                src = 7,
+                name = "Lewis Rhodes",
+                grade = "Sergeant",
+                channel = 4,
+                callsign = 503,
+                isTalking = isTalking,
+            })
+
+            table.insert(data, {
+                src = 8,
+                name = "Abby Newman",
+                grade = "Officer",
+                channel = 1,
+                callsign = 263,
+                isTalking = true,
+            })
+
+            table.insert(data, {
+                src = 9,
+                name = "Robert Brooks",
+                grade = "Deputy",
+                channel = 1,
+                callsign = 415,
+                isTalking = isTalking,
+                me = me
+            })
+
+            table.insert(data, {
+                src = 10,
+                name = "Adam Newman",
+                grade = "Sn. Officer",
+                channel = 1,
+                callsign = 265,
+                isTalking = isTalking,
+            })
+            table.insert(data, {
+                src = 11,
+                name = "Bobbie Banks",
+                grade = "Cadet",
+                channel = 1,
+                callsign = 280,
+                isTalking = isTalking,
+            })
+
+            table.insert(data, {
+                src = 12,
+                name = "Donald Banks",
+                grade = "Trooper",
+                channel = 1,
+                callsign = 464,
+                isTalking = isTalking,
+            })
+
+            table.insert(data, {
+                src = 13,
+                name = "Robbie Bradley",
+                grade = "Sergeant",
+                channel = 1,
+                callsign = 453,
+                isTalking = isTalking,
+            })
+
+            table.insert(data, {
+                src = 14,
+                name = "Mark Gomez",
+                grade = "Corporal",
+                channel = 1,
+                callsign = 458,
+                isTalking = isTalking,
+            })
+
+            table.insert(data, {
+                src = 15,
+                name = "Devon Carter",
+                grade = "Commander",
+                channel = 2,
+                callsign = "H-202",
+                isTalking = isTalking,
+            })
         else
             TriggerClientEvent("fl-activeofficers:client:open", v, 'force_exit')
         end

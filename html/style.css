@@ -13,9 +13,9 @@ body {
   position: absolute;
   right: 5%;
   top: 40%;
-  width: 16%;
-  max-width: 80%;
   height: auto;
+  width: 17%;
+  flex-direction: column;
 
   -webkit-box-shadow: 0px 0px 21px -1px rgba(0, 0, 0, 0.68);
   -moz-box-shadow: 0px 0px 21px -1px rgba(0, 0, 0, 0.68);
@@ -33,11 +33,11 @@ body {
 }
 
 .officers {
-  text-align: left;
   padding-bottom: 2.5%;
   padding-top: 1.5%;
   padding-right: 1.5%;
   padding-left: 1.5%;
+  text-align: left;
 }
 
 .officer {
