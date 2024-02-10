@@ -10,10 +10,11 @@ ui_page "html/index.html"
 
 client_script "client.lua"
 server_script "server.lua"
+shared_script "config.lua"
 
 files {
     "html/*.html",
     "html/*.css",
     "html/*.js",
-    "config.json"
+    "colors.json"
 }

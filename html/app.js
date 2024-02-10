@@ -1,7 +1,7 @@
 let configData = null;
 
 $(document).ready(function () {
-  fetch("../config.json")
+  fetch("../colors.json")
     .then((response) => {
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
@@ -10,7 +10,7 @@ $(document).ready(function () {
     })
     .then((data) => (configData = data))
     .catch((error) => {
-      console.error("Error fetching config.json:", error);
+      console.error("Error fetching colors.json:", error);
     });
 
   $("body").on("keyup", function (key) {

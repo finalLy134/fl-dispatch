@@ -108,4 +108,4 @@ RegisterCommand("+plist_drag", function()
     TriggerServerEvent('fl-activeofficers:server:open', GetPlayerServerId(PlayerId()), { "0" })
 end, false)
 
-RegisterKeyMapping('+plist_drag', 'Opens Active Officers List', 'keyboard', 'F3')
+RegisterKeyMapping('+plist_drag', 'Opens Active Officers List', Config.ToggleKey['group'], Config.ToggleKey['key'])
