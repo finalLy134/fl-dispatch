@@ -10,8 +10,6 @@ Need Help? My Discord: finalLy#1138
 - qb-policejob
 - pma-voice
 
-## Code Changes Requirements
-
 Add this line at `qb-core/server/player.lua` line 272:
 
 ```lua
