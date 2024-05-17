@@ -10,27 +10,29 @@ Need Help? My Discord: finalLy#1138
 - qb-policejob
 - pma-voice
 
-- Add this line at `qb-core/server/player.lua` line 272:
+## Code Changes Requirements
 
-    ```lua
-    TriggerEvent('QBCore:Server:OnMetaDataUpdate', self.PlayerData.source, meta, val)
-    ```
-    
-    Your method should look like this:
-    
-    ```lua
-    function self.Functions.SetMetaData(meta, val)
-        if not meta or type(meta) ~= 'string' then return end
-        if meta == 'hunger' or meta == 'thirst' then
-            val = val > 100 and 100 or val
-        end
-        self.PlayerData.metadata[meta] = val
-        self.Functions.UpdatePlayerData()
-    
-        -- Triggering our event:
-        TriggerEvent('QBCore:Server:OnMetaDataUpdate', self.PlayerData.source, meta, val)
+Add this line at `qb-core/server/player.lua` line 272:
+
+```lua
+TriggerEvent('QBCore:Server:OnMetaDataUpdate', self.PlayerData.source, meta, val)
+```
+
+Your method should look like this:
+
+```lua
+function self.Functions.SetMetaData(meta, val)
+    if not meta or type(meta) ~= 'string' then return end
+    if meta == 'hunger' or meta == 'thirst' then
+        val = val > 100 and 100 or val
     end
-    ```
+    self.PlayerData.metadata[meta] = val
+    self.Functions.UpdatePlayerData()
+
+    -- Triggering our event:
+    TriggerEvent('QBCore:Server:OnMetaDataUpdate', self.PlayerData.source, meta, val)
+end
+```
 
 ## Keybinds
 - F3 - Open Active Officers List - Changeable in the `config.lua`
