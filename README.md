@@ -37,6 +37,54 @@ end
 **Keybinds:**
 - F3 - Open Active Officers List - Changeable in the `config.lua`
 
+**Config:**
+
+- The toggle key is configurable in the `config.lua`.
+- The callsign colors and prefixes are configurable in the `colors.json`.
+
+**Configure Colors and Prefixes:**
+
+- The default colors are changable here:
+  ```json
+    "defaultColors": {
+      "backgroundColor": "rgb(47, 69, 86)",
+      "foregroundColor": "white"
+  },
+  ```
+- The special colors (prefixes) are changable here:
+  ```json
+  "special": [
+    {
+      "prefix": "S",
+      "colors": {
+        "backgroundColor": "red",
+        "foregroundColor": "white"
+      }
+    },
+  ]
+  ```
+- The callsign ranges are changable here:
+  ```json
+    "ranges": [
+        {
+          "start": 200,
+          "end": 210,
+          "colors": {
+            "backgroundColor": "rgb(235, 1, 2)",
+            "foregroundColor": "white"
+          }
+        },
+        {
+          "start": 300,
+          "end": 330,
+          "colors": {
+            "backgroundColor": "rgb(20, 10, 11)",
+            "foregroundColor": "white"
+          }
+        }
+    ]
+  ```
+
 **Commands:**
 - /plist 0 - Drag Menu
 - /plist - Toggle Menu
