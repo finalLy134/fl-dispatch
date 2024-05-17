@@ -5,12 +5,12 @@ Link to old script [here](https://forum.cfx.re/t/release-fivem-advanced-active-o
 
 Need Help? My Discord: finalLy#1138
 
-**Requirements:**
+## Requirements
 - qb-core
 - qb-policejob
 - pma-voice
 
-**Code Changes Requirements:**
+## Code Changes Requirements
 
 Add this line at `qb-core/server/player.lua` line 272:
 
@@ -34,10 +34,10 @@ function self.Functions.SetMetaData(meta, val)
 end
 ```
 
-**Keybinds:**
+## Keybinds
 - F3 - Open Active Officers List - Changeable in the `config.lua`
 
-**Configure Colors and Prefixes:**
+## Configure Colors and Prefixes
 
 The colors and prefixes are editable in the `colors.json`
 
@@ -82,11 +82,11 @@ The colors and prefixes are editable in the `colors.json`
     ]
   ```
 
-**Commands:**
+## Commands
 - /plist 0 - Drag Menu
 - /plist - Toggle Menu
 - /callsign `[callsign]` - To set your callsign (QBCore Command)
 
-**Preview:**
+## Preview:
 
 ![fl-activeofficers-preview](https://github.com/finalLy134/fl-activeofficers/assets/60448180/f9345bbf-a1d7-4929-92ad-e4490b4b69c9)
