@@ -10,7 +10,6 @@ Link to old script [here](https://forum.cfx.re/t/release-fivem-advanced-active-o
         <th>Personal Account</th>
         <td><img src="https://dcbadge.limes.pink/api/shield/311897788206153730" alt="" /></td>
     </tr>
-        <tr>
         <th>Discord Server</th>
         <td><a target="_blank" href="https://discord.gg/87MZnFQv9y"><img src="https://dcbadge.limes.pink/api/server/87MZnFQv9y" alt="" /></a></td>
     </tr>
