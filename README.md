@@ -37,14 +37,11 @@ end
 **Keybinds:**
 - F3 - Open Active Officers List - Changeable in the `config.lua`
 
-**Config:**
-
-- The toggle key is configurable in the `config.lua`.
-- The callsign colors and prefixes are configurable in the `colors.json`.
-
 **Configure Colors and Prefixes:**
 
-- The default colors are changable in `colors.json` Usage:
+The colors and prefixes are editable in the `colors.json`
+
+- The default colors are changable here:
   ```json  
   "defaultColors": {
       "backgroundColor": "rgb(47, 69, 86)",
