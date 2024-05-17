@@ -5,7 +5,11 @@ Link to old script [here](https://forum.cfx.re/t/release-fivem-advanced-active-o
 
 ## Support
 
-My Discord: finalLy#1138
+### Personal Discord
+`notfinally`
+
+### Discord Server
+[Join Here](https://discord.gg/87MZnFQv9y)
 
 ## Requirements
 - qb-core
