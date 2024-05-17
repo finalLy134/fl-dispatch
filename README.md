@@ -6,6 +6,7 @@ Link to old script [here](https://forum.cfx.re/t/release-fivem-advanced-active-o
 ## Support
 
 ![](https://dcbadge.limes.pink/api/shield/311897788206153730)
+[![](https://dcbadge.limes.pink/api/server/INVITE)](https://discord.gg/87MZnFQv9y)
 
 ## Requirements
 - qb-core
