@@ -5,6 +5,10 @@ Link to old script [here](https://forum.cfx.re/t/release-fivem-advanced-active-o
 
 ## Support
 
+| ------------- | ------------- |
+| Personal Account  | ![](https://dcbadge.limes.pink/api/shield/311897788206153730)  |
+| Discord Server  | [![](https://dcbadge.limes.pink/api/server/87MZnFQv9y)](https://discord.gg/87MZnFQv9y)  |
+
 | Personal Account | Discord Server |
 | :---         | :---         |
 | ![](https://dcbadge.limes.pink/api/shield/311897788206153730)   | [![](https://dcbadge.limes.pink/api/server/87MZnFQv9y)](https://discord.gg/87MZnFQv9y) |
