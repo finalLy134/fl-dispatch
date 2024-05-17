@@ -65,24 +65,24 @@ end
   ```
 - The callsign ranges are changable here:
   ```json
-    "ranges": [
-        {
-          "start": 200,
-          "end": 210,
-          "colors": {
-            "backgroundColor": "rgb(235, 1, 2)",
-            "foregroundColor": "white"
-          }
-        },
-        {
-          "start": 300,
-          "end": 330,
-          "colors": {
-            "backgroundColor": "rgb(20, 10, 11)",
-            "foregroundColor": "white"
-          }
-        }
-    ]
+"ranges": [
+    {
+      "start": 200,
+      "end": 210,
+      "colors": {
+        "backgroundColor": "rgb(235, 1, 2)",
+        "foregroundColor": "white"
+      }
+    },
+    {
+      "start": 300,
+      "end": 330,
+      "colors": {
+        "backgroundColor": "rgb(20, 10, 11)",
+        "foregroundColor": "white"
+      }
+    }
+]
   ```
 
 **Commands:**
