@@ -44,7 +44,7 @@ end
 
 **Configure Colors and Prefixes:**
 
-- The default colors are changable in `colors.json`. Usage:
+- The default colors are changable in `colors.json` Usage:
   ```json  
   "defaultColors": {
       "backgroundColor": "rgb(47, 69, 86)",
