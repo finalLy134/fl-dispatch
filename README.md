@@ -44,9 +44,9 @@ end
 
 **Configure Colors and Prefixes:**
 
-- The default colors are changable here:
-  ```json
-    "defaultColors": {
+- The default colors are changable here: (`colors.json`)
+  ```json  
+  "defaultColors": {
       "backgroundColor": "rgb(47, 69, 86)",
       "foregroundColor": "white"
   },
@@ -65,7 +65,7 @@ end
   ```
 - The callsign ranges are changable here:
   ```json
-    "ranges": [
+  "ranges": [
         {
           "start": 200,
           "end": 210,
