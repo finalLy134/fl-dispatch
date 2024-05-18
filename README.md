@@ -50,6 +50,7 @@ end
 ## Configure Colors and Prefixes
 
 The colors and prefixes are editable in the `colors.json`
+**IMPORTANT:** If you do copy from these templates down here don't forget to remove the `#`'s because it may cause errors. 
 
 ### Default Colors
 In order to change the default colors simply change the `backgroundColor` `foregroundColor` as you wish.
@@ -63,7 +64,6 @@ In order to change the default colors simply change the `backgroundColor` `foreg
 In order to change the special colors simply change the `prefix` `backgroundColor` `foregroundColor` as you wish.
 To add more special colors, simply copy and paste as shown.
 
-**IMPORTANT:** If you do copy from this template here don't forget to remove the `#`'s because it may cause errors. 
   ```json
   "special": [
     { # Start copying from this line
@@ -80,7 +80,6 @@ To add more special colors, simply copy and paste as shown.
 In order to change the callsign ranges colors simply change the `start` `end` `backgroundColor` `foregroundColor` as you wish.
 To add more callsign ranges colors, simply copy and paste as shown.
 
-**IMPORTANT:** If you do copy from this template here don't forget to remove the `#`'s because it may cause errors. 
   ```json
   "ranges": [
         { # Start copying from this line
