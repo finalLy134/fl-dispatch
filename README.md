@@ -73,7 +73,7 @@ To add more special colors, simply copy and paste as shown.
         "foregroundColor": "white"
       }
     }, # End copying here
-    # Paste New
+    + Paste New
   ]
   ```
 ### Callsign Ranges
@@ -90,7 +90,7 @@ To add more callsign ranges colors, simply copy and paste as shown.
             "foregroundColor": "white"
           }
         }, # End copying here
-        # Paste New
+        + Paste New
     ]
   ```
 
