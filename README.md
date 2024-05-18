@@ -53,46 +53,46 @@ The colors and prefixes are editable in the `colors.json`
 If you do copy from these templates down here don't forget to remove the `#`'s because it may cause errors. 
 
 - ### Default Colors
-In order to change the default colors simply change the `backgroundColor` `foregroundColor` as you wish.
-  ```json  
-  "defaultColors": {
-      "backgroundColor": "rgb(47, 69, 86)",
-      "foregroundColor": "white"
-  },
-  ```
+    In order to change the default colors simply change the `backgroundColor` `foregroundColor` as you wish.
+      ```json  
+      "defaultColors": {
+          "backgroundColor": "rgb(47, 69, 86)",
+          "foregroundColor": "white"
+      },
+      ```
 - ### Special Colors
-In order to change the special colors simply change the `prefix` `backgroundColor` `foregroundColor` as you wish.
-To add more special colors, simply copy and paste as shown.
-
-  ```json
-  "special": [
-    { # Start copying from this line
-      "prefix": "S",
-      "colors": {
-        "backgroundColor": "red",
-        "foregroundColor": "white"
-      }
-    }, # End copying here
-    # Paste New
-  ]
-  ```
-- ### Callsign Ranges
-In order to change the callsign ranges colors simply change the `start` `end` `backgroundColor` `foregroundColor` as you wish.
-To add more callsign ranges colors, simply copy and paste as shown.
-
-  ```json
-  "ranges": [
+    In order to change the special colors simply change the `prefix` `backgroundColor` `foregroundColor` as you wish.
+    To add more special colors, simply copy and paste as shown.
+    
+      ```json
+      "special": [
         { # Start copying from this line
-          "start": 200,
-          "end": 210,
+          "prefix": "S",
           "colors": {
-            "backgroundColor": "rgb(235, 1, 2)",
+            "backgroundColor": "red",
             "foregroundColor": "white"
           }
         }, # End copying here
         # Paste New
-    ]
-  ```
+      ]
+      ```
+- ### Callsign Ranges
+    In order to change the callsign ranges colors simply change the `start` `end` `backgroundColor` `foregroundColor` as you wish.
+    To add more callsign ranges colors, simply copy and paste as shown.
+    
+      ```json
+      "ranges": [
+            { # Start copying from this line
+              "start": 200,
+              "end": 210,
+              "colors": {
+                "backgroundColor": "rgb(235, 1, 2)",
+                "foregroundColor": "white"
+              }
+            }, # End copying here
+            # Paste New
+        ]
+      ```
 
 ## Commands
 - /plist 0 - Drag Menu
