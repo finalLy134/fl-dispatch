@@ -47,6 +47,11 @@ end
 ## Keybinds
 - F3 - Open Active Officers List - Changeable in the `config.lua`
 
+## Commands
+- /plist 0 - Drag Menu
+- /plist - Toggle Menu
+- /callsign `[callsign]` - To set your callsign (QBCore Command)
+
 ## Configure Colors
 
 The colors and prefixes are editable in the `colors.json`.
@@ -93,11 +98,6 @@ To add more callsign ranges colors, simply copy and paste as shown.
         + Paste New
     ]
   ```
-
-## Commands
-- /plist 0 - Drag Menu
-- /plist - Toggle Menu
-- /callsign `[callsign]` - To set your callsign (QBCore Command)
 
 ## Preview:
 
