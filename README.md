@@ -45,17 +45,16 @@ end
 ```
 
 ## Keybinds
-- F3 - Open Active Officers List - Changeable in the `config.lua`
+- F3 - Open Active Officers List - Changeable in the `./config.lua`
 
 ## Commands
 - /plist 0 - Drag Menu
 - /plist - Toggle Menu
 - /callsign `[callsign]` - To set your callsign (QBCore Command)
 
-## Configure Colors
+## Configuration
 
-The colors and prefixes are editable in the `colors.json`.
-If you do copy from these templates down here don't forget to remove the `#`'s because it may cause errors. 
+The colors and prefixes are configurable in the `./colors.json`.
 
 ### Default Colors
 In order to change the default colors simply change the `backgroundColor` `foregroundColor` as you wish.
