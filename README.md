@@ -51,14 +51,14 @@ end
 
 The colors and prefixes are editable in the `colors.json`
 
-- The default colors are changable here:
+### Default Colors
   ```json  
   "defaultColors": {
       "backgroundColor": "rgb(47, 69, 86)",
       "foregroundColor": "white"
   },
   ```
-- The special colors (prefixes) are changable here:
+### Special Colors
   ```json
   "special": [
     {
@@ -70,7 +70,7 @@ The colors and prefixes are editable in the `colors.json`
     },
   ]
   ```
-- The callsign ranges are changable here:
+### Callsign Ranges
   ```json
   "ranges": [
         {
