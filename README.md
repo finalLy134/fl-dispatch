@@ -63,7 +63,7 @@ In order to change the default colors change the `backgroundColor` and `foregrou
 In order to change the special colors change the `prefix`, `backgroundColor` and `foregroundColor` as you wish.
 To add more special colors, simply copy and paste as shown.
 
-IMPORTANT: If you do copy from this template here don't forget to remove the `#`'s because it may cause errors. 
+**IMPORTANT:** If you do copy from this template here don't forget to remove the `#`'s because it may cause errors. 
   ```json
   "special": [
     { # Start copying from this line
@@ -80,7 +80,7 @@ IMPORTANT: If you do copy from this template here don't forget to remove the `#`
 In order to change the callsign ranges colors change the `start`, `end`, `backgroundColor` and `foregroundColor` as you wish.
 To add more callsign ranges colors, simply copy and paste as shown.
 
-IMPORTANT: If you do copy from this template here don't forget to remove the `#`'s because it may cause errors. 
+**IMPORTANT:** If you do copy from this template here don't forget to remove the `#`'s because it may cause errors. 
   ```json
   "ranges": [
         { # Start copying from this line
