@@ -45,7 +45,7 @@ end
 ```
 
 ## Keybinds
-- F3 - Open Active Officers List - Configurable in the `./config.lua`
+- F3 - Open Active Officers List - Configurable in the `config.lua`
 
 ## Commands
 - /plist 0 - Drag Menu
@@ -54,7 +54,7 @@ end
 
 ## Configuration
 
-The colors and prefixes are configurable in the `./colors.json`.
+The colors and prefixes are configurable in the `colors.json`.
 
 ### Default Colors
 In order to change the default colors simply change the `backgroundColor` `foregroundColor` as you wish.
