@@ -52,7 +52,7 @@ end
 The colors and prefixes are editable in the `colors.json`
 
 ### Default Colors
-In order to change the default colors simply change the `backgroundColor` and `foregroundColor` as you wish.
+In order to change the default colors simply change the `backgroundColor` `foregroundColor` as you wish.
   ```json  
   "defaultColors": {
       "backgroundColor": "rgb(47, 69, 86)",
