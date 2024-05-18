@@ -52,6 +52,7 @@ end
 The colors and prefixes are editable in the `colors.json`
 
 ### Default Colors
+In order to change the default colors change the `backgroundColor` and `foregroundColor` as you wish.
   ```json  
   "defaultColors": {
       "backgroundColor": "rgb(47, 69, 86)",
@@ -59,36 +60,36 @@ The colors and prefixes are editable in the `colors.json`
   },
   ```
 ### Special Colors
+In order to change the special colors change the `prefix`, `backgroundColor` and `foregroundColor` as you wish.
+To add more special colors, simply copy and paste as shown.
+IMPORTANT: If you do copy from this template here don't forget to remove the `#`'s because it may cause errors. 
   ```json
   "special": [
-    {
+    { # Start copying from this line
       "prefix": "S",
       "colors": {
         "backgroundColor": "red",
         "foregroundColor": "white"
       }
-    },
+    }, # End copying here
+    # Paste New
   ]
   ```
 ### Callsign Ranges
+In order to change the callsign ranges colors change the `start`, `end`, `backgroundColor` and `foregroundColor` as you wish.
+To add more callsign ranges colors, simply copy and paste as shown.
+IMPORTANT: If you do copy from this template here don't forget to remove the `#`'s because it may cause errors. 
   ```json
   "ranges": [
-        {
+        { # Start copying from this line
           "start": 200,
           "end": 210,
           "colors": {
             "backgroundColor": "rgb(235, 1, 2)",
             "foregroundColor": "white"
           }
-        },
-        {
-          "start": 300,
-          "end": 330,
-          "colors": {
-            "backgroundColor": "rgb(20, 10, 11)",
-            "foregroundColor": "white"
-          }
-        }
+        }, # End copying here
+        # Paste New
     ]
   ```
 
