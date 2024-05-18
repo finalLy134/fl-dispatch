@@ -55,7 +55,6 @@ end
 ## Configuration
 
 The colors and prefixes are configurable in the `colors.json`.
-You can choose colors [Here](https://www.canva.com/colors/color-wheel/).
 
 ### Default Colors
 In order to change the default colors simply change the `backgroundColor` `foregroundColor` as you wish.
