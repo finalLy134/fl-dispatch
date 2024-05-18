@@ -101,3 +101,7 @@ To add more callsign ranges colors, simply copy and paste as shown.
 ## Preview:
 
 ![fl-activeofficers-preview](https://github.com/finalLy134/fl-activeofficers/assets/60448180/f9345bbf-a1d7-4929-92ad-e4490b4b69c9)
+
+## License
+
+This project is under MIT license. See the file [LICENSE](LICENSE) for more details.
