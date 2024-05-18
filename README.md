@@ -50,6 +50,7 @@ end
 ## Configure Colors and Prefixes
 
 The colors and prefixes are editable in the `colors.json`
+
 **IMPORTANT:** If you do copy from these templates down here don't forget to remove the `#`'s because it may cause errors. 
 
 ### Default Colors
