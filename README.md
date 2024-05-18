@@ -47,7 +47,7 @@ end
 ## Keybinds
 - F3 - Open Active Officers List - Changeable in the `config.lua`
 
-## Configure Colors and Prefixes
+## Configure Colors
 
 The colors and prefixes are editable in the `colors.json`.
 If you do copy from these templates down here don't forget to remove the `#`'s because it may cause errors. 
