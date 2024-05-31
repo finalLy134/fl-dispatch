@@ -1,5 +1,5 @@
 fx_version 'cerulean'
-games "gta5"
+game "gta5"
 
 author "finalLy#1138"
 description "QB Advanced Dispatch System"
