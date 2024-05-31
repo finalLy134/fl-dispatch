@@ -111,6 +111,7 @@ To add more callsign ranges colors, simply copy and paste as shown.
 ## Preview
 
 ![fl-dispatch-preview](https://github.com/finalLy134/fl-dispatch/assets/60448180/f9345bbf-a1d7-4929-92ad-e4490b4b69c9)
+![fl-dispatch-preview-2](https://media.discordapp.net/attachments/1047244801252270080/1246191875312980112/image.png?ex=665b7e20&is=665a2ca0&hm=832162e846e7bd5e250abbfa2d296de7255ee2af8c1e3888d4aad75df2e0e27d&=&format=webp&quality=lossless&width=420&height=515)
 
 ## License
 
