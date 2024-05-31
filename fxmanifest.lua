@@ -3,7 +3,7 @@ fx_version 'bodacious'
 games { "gta5" }
 
 author "finalLy#1138"
-description "QB Advanced Active Officers System"
+description "QB Advanced Dispatch System"
 version "2.0.0"
 
 ui_page "html/index.html"

@@ -28,43 +28,44 @@ window.addEventListener("message", function (event) {
     $(".app").fadeIn(500);
   } else if (action == "drag") {
     $(".app").fadeIn(500);
-    dragElement(document.getElementById("app"));
+    $(".app").draggable({
+      handle: ".title",
+      containment: "window",
+    });
   } else if (action == "close") {
     $(".app").fadeOut(500);
   } else if (action == "refresh") {
-    $(".officers").html("");
-    var officers = data.sort((a, b) => {
-      return a.callsign - b.callsign;
-    });
+    $(".players").html("");
 
-    let title =
-      officers.length > 1
-        ? officers.length + " Active Officers"
-        : officers.length + " Active Officer";
+    for (var jobData of data) {
+      $(".title").text(configData.jobs[jobData.job].label);
 
-    $(".title").text(title);
+      var sortedPlayers = jobData.players.sort((a, b) => {
+        return a.callsign.localeCompare(b.callsign);
+      });
 
-    for (var officer of officers) {
-      html = `
-        <div class="officer" id=officer-id-${officer.src}>
-            <span class="callsign ${officer.me ? "me-bold" : ""}" 
-            style="background-color: ${
-              getCallsignColors(officer.callsign).bg
-            }; color: ${getCallsignColors(officer.callsign).fg};">${
-        officer.callsign
-      }</span>
-            <span class="name ${officer.me ? "me-bold" : ""}">${
-        officer.name
-      }</span> |
-            <span class="grade ${officer.me ? "me-bold" : ""}">${
-        officer.grade
-      }</span> - <span class="status ${officer.me ? "me-bold" : ""}${
-        officer.isTalking ? "radio-talking" : ""
-      }">
-            ${officer.channel == 0 ? "Off" : officer.channel + "hz"}</span>
-        </div>`;
+      for (var player of sortedPlayers) {
+        html = `
+          <div class="player" id=player-id-${player.src}>
+              <span class="callsign ${player.me ? "me-bold" : ""}" 
+              style="background-color: ${
+                getCallsignColors(player.callsign, jobData.job).bg
+              }; color: ${
+          getCallsignColors(player.callsign, jobData.job).fg
+        };">${player.callsign}</span>
+              <span class="name ${player.me ? "me-bold" : ""}">${
+          player.name
+        }</span> |
+              <span class="grade ${player.me ? "me-bold" : ""}">${
+          player.grade
+        }</span> - <span class="status ${player.me ? "me-bold" : ""}${
+          player.isTalking ? "radio-talking" : ""
+        }">
+              ${player.channel == 0 ? "Off" : player.channel + "hz"}</span>
+          </div>`;
 
-      $(".officers").append(html);
+        $(".players").append(html);
+      }
     }
   } else if (action == "removePlayer") {
     removePlayer(data.src);
@@ -76,40 +77,40 @@ window.addEventListener("message", function (event) {
 });
 
 function removePlayer(src) {
-  var officerElement = $(`#officer-id-${src}`);
+  var playerElement = $(`#player-id-${src}`);
 
-  if (officerElement.length) {
-    officerElement.remove();
+  if (playerElement.length) {
+    playerElement.remove();
   }
 }
 
 function setTalkingOnRadio(src, talking) {
-  var officerElement = $(`#officer-id-${src}`);
+  var playerElement = $(`#player-id-${src}`);
 
-  if (officerElement.length) {
-    var statusElement = officerElement.find(".status");
+  if (playerElement.length) {
+    var statusElement = playerElement.find(".status");
     if (talking) {
       statusElement.addClass("radio-talking");
     } else {
       statusElement.removeClass("radio-talking");
     }
   } else {
-    console.error(`Officer element with src ${src} not found.`);
+    console.error(`Player element with src ${src} not found.`);
   }
 }
 
 function setPlayerRadio(src, channel) {
-  var officerElement = $(`#officer-id-${src}`);
+  var playerElement = $(`#player-id-${src}`);
 
-  if (officerElement.length) {
-    var statusElement = officerElement.find(".status");
+  if (playerElement.length) {
+    var statusElement = playerElement.find(".status");
     statusElement.text(channel == 0 ? "Off" : channel + "hz");
   } else {
-    console.error(`Officer element with src ${src} not found.`);
+    console.error(`Player element with src ${src} not found.`);
   }
 }
 
-function getCallsignColors(callsign) {
+function getCallsignColors(callsign, job) {
   if (!configData) {
     console.error("Config data not available yet.");
     return;
@@ -121,85 +122,48 @@ function getCallsignColors(callsign) {
     bg: defaultColors.backgroundColor,
   };
 
-  const callsignNumber = parseInt(callsign);
+  // Retrieve job-specific colors, ranges, and specials
+  const jobConfig = configData.jobs[job];
 
-  if (!isNaN(callsignNumber)) {
-    // If callsign can be parsed as an integer, use ranges
-    for (const range of configData.ranges) {
-      if (callsignNumber >= range.start && callsignNumber <= range.end) {
-        colors.fg = range.colors.foregroundColor;
-        colors.bg = range.colors.backgroundColor;
-        break;
-      }
+  if (jobConfig) {
+    const jobColors = jobConfig.colors;
+
+    // Check for job-specific colors
+    if (jobColors) {
+      colors.fg = jobColors.foregroundColor;
+      colors.bg = jobColors.backgroundColor;
     }
-  } else if (typeof callsign === "string") {
-    // If callsign is a string, check for special prefixes
-    for (const prefixData of configData.special) {
-      const prefix = prefixData.prefix;
-      if (callsign.startsWith(prefix)) {
-        colors.fg = prefixData.colors.foregroundColor;
-        colors.bg = prefixData.colors.backgroundColor;
-        break;
+
+    const jobRanges = jobConfig.ranges;
+    const jobSpecials = jobConfig.special;
+
+    const callsignNumber = parseInt(callsign);
+
+    if (!isNaN(callsignNumber)) {
+      // If callsign can be parsed as an integer, use job-specific ranges if available
+      if (jobRanges) {
+        for (const range of jobRanges) {
+          if (callsignNumber >= range.start && callsignNumber <= range.end) {
+            colors.fg = range.colors.foregroundColor;
+            colors.bg = range.colors.backgroundColor;
+            break;
+          }
+        }
+      }
+    } else if (typeof callsign === "string") {
+      // If callsign is a string, check for job-specific specials if available
+      if (jobSpecials) {
+        for (const prefixData of jobSpecials) {
+          const prefix = prefixData.prefix;
+          if (callsign.startsWith(prefix)) {
+            colors.fg = prefixData.colors.foregroundColor;
+            colors.bg = prefixData.colors.backgroundColor;
+            break;
+          }
+        }
       }
     }
   }
 
   return colors;
-}
-
-function dragElement(elmnt) {
-  var pos1 = 0,
-    pos2 = 0,
-    pos3 = 0,
-    pos4 = 0;
-
-  var header = $(".title");
-
-  if (header.length) {
-    // If present, the header is where you move the DIV from:
-    header.on("mousedown", dragMouseDown);
-  } else {
-    // Otherwise, move the DIV from anywhere inside the DIV:
-    $(elmnt).on("mousedown", dragMouseDown);
-  }
-
-  function dragMouseDown(e) {
-    e.preventDefault();
-
-    // Check if the mouse is over the header during dragging
-    var isHeaderClicked = $(e.target).is(header);
-
-    // If not over the header, allow resizing
-    if (!isHeaderClicked) {
-      return;
-    }
-
-    // Get the mouse cursor position at startup:
-    pos3 = e.clientX;
-    pos4 = e.clientY;
-
-    $(document).on("mouseup", closeDragElement);
-    // Call a function whenever the cursor moves:
-    $(document).on("mousemove", elementDrag);
-  }
-
-  function elementDrag(e) {
-    e.preventDefault();
-
-    // Calculate the new cursor position:
-    pos1 = pos3 - e.clientX;
-    pos2 = pos4 - e.clientY;
-    pos3 = e.clientX;
-    pos4 = e.clientY;
-
-    // Set the element's new position:
-    elmnt.style.top = elmnt.offsetTop - pos2 + "px";
-    elmnt.style.left = elmnt.offsetLeft - pos1 + "px";
-  }
-
-  function closeDragElement() {
-    // Stop moving when the mouse button is released:
-    $(document).off("mouseup", closeDragElement);
-    $(document).off("mousemove", elementDrag);
-  }
 }
