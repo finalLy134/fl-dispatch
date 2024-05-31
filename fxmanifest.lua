@@ -1,10 +1,11 @@
-fx_version 'bodacious'
-
-games { "gta5" }
+fx_version 'cerulean'
+games "gta5"
 
 author "finalLy#1138"
 description "QB Advanced Dispatch System"
-version "2.0.0"
+repository "https://github.com/finalLy134/fl-dispatch"
+
+version "2.1.0"
 
 ui_page "html/index.html"
 
