@@ -38,7 +38,9 @@ window.addEventListener("message", function (event) {
     $(".players").html("");
 
     for (var jobData of data) {
-      $(".title").text(configData.jobs[jobData.job].label);
+      $(".title").text(
+        jobData.players.length + " " + configData.jobs[jobData.job].label
+      );
 
       var sortedPlayers = jobData.players.sort((a, b) => {
         return a.callsign.localeCompare(b.callsign);

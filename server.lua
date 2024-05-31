@@ -2,7 +2,7 @@ QBCore = exports['qb-core']:GetCoreObject()
 
 local pTalking = {}
 
-QBCore.Commands.Add('plist', "Opens Job Dispatch List", {}, false, function(source, args)
+QBCore.Commands.Add('dispatch', "Opens Job Dispatch List", {}, false, function(source, args)
     TriggerEvent('fl-dispatch:server:open', source, args)
 end)
 

@@ -107,11 +107,11 @@ AddEventHandler("fl-dispatch:client:setPlayerRadio", function(src, channel)
     })
 end)
 
-RegisterCommand("+plist_drag", function()
+RegisterCommand("+dispatch", function()
     TriggerServerEvent('fl-dispatch:server:open', GetPlayerServerId(PlayerId()), {})
 end, false)
 
-RegisterKeyMapping('+plist_drag', 'Opens Job Dispatch List', Config.ToggleKey['group'], Config.ToggleKey['key'])
+RegisterKeyMapping('+dispatch', 'Opens Job Dispatch List', Config.ToggleKey['group'], Config.ToggleKey['key'])
 
 function IsJobAllowed(job)
     for _, allowedJob in ipairs(Config.Jobs) do
