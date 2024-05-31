@@ -122,13 +122,11 @@ function getCallsignColors(callsign, job) {
     bg: defaultColors.backgroundColor,
   };
 
-  // Retrieve job-specific colors, ranges, and specials
   const jobConfig = configData.jobs[job];
 
   if (jobConfig) {
     const jobColors = jobConfig.colors;
 
-    // Check for job-specific colors
     if (jobColors) {
       colors.fg = jobColors.foregroundColor;
       colors.bg = jobColors.backgroundColor;
@@ -140,7 +138,6 @@ function getCallsignColors(callsign, job) {
     const callsignNumber = parseInt(callsign);
 
     if (!isNaN(callsignNumber)) {
-      // If callsign can be parsed as an integer, use job-specific ranges if available
       if (jobRanges) {
         for (const range of jobRanges) {
           if (callsignNumber >= range.start && callsignNumber <= range.end) {
@@ -151,7 +148,6 @@ function getCallsignColors(callsign, job) {
         }
       }
     } else if (typeof callsign === "string") {
-      // If callsign is a string, check for job-specific specials if available
       if (jobSpecials) {
         for (const prefixData of jobSpecials) {
           const prefix = prefixData.prefix;
