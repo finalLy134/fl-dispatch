@@ -96,14 +96,94 @@
       "colors": {
         "backgroundColor": "red",
         "foregroundColor": "white"
-      }
+      },
+      "ranges": [
+        {
+          "start": 1,
+          "end": 19,
+          "colors": {
+            "backgroundColor": "#2e54d1",
+            "foregroundColor": "white"
+          }
+        },
+        {
+          "start": 31,
+          "end": 39,
+          "colors": {
+            "backgroundColor": "#2e54d1",
+            "foregroundColor": "white"
+          }
+        },
+        {
+          "start": 21,
+          "end": 29,
+          "colors": {
+            "backgroundColor": "#10a9ef",
+            "foregroundColor": "white"
+          }
+        },
+        {
+          "start": 91,
+          "end": 99,
+          "colors": {
+            "backgroundColor": "#AB1150",
+            "foregroundColor": "white"
+          }
+        }
+      ],
+      "special": [
+        {
+          "prefix": "A",
+          "colors": {
+            "backgroundColor": "#11ab6c",
+            "foregroundColor": "white"
+          }
+        },
+        {
+          "prefix": "DELTA",
+          "colors": {
+            "backgroundColor": "#FF9700",
+            "foregroundColor": "white"
+          }
+        },
+        {
+          "prefix": "OMEGA",
+          "colors": {
+            "backgroundColor": "#EF5610",
+            "foregroundColor": "white"
+          }
+        },
+        {
+          "prefix": "PD",
+          "colors": {
+            "backgroundColor": "#DE212A",
+            "foregroundColor": "white"
+          }
+        }
+      ]
     },
     "taxi": {
       "label": "Active Drivers",
       "colors": {
         "backgroundColor": "yellow",
         "foregroundColor": "black"
-      }
+      },
+      "special": [
+        {
+          "prefix": "ALPHA",
+          "colors": {
+            "backgroundColor": "#FF6F00",
+            "foregroundColor": "white"
+          }
+        },
+        {
+          "prefix": "METRO",
+          "colors": {
+            "backgroundColor": "#0090FF",
+            "foregroundColor": "white"
+          }
+        }
+      ]
     }
   }
 }
