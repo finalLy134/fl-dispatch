@@ -67,13 +67,13 @@ Also, you can change it on the client-side (only for you) in the Game Settings.
 ### 2. How can I add another job?
 This is a frequently asked question, and the answer is simple. For this example, we'll add job support for `beanmachine`.
 
-#### 1. Head to `config.lua`
+#### A. Head to `config.lua`
 Add your new job to the `Config.Jobs` table. It should look like this:
 ```lua
 Config.Jobs = { "police", "ambulance", "taxi", "beanmachine" }
 ```
 
-#### 2. Head to `colors.json`
+#### B. Head to `colors.json`
 Add the colors for your `beanmachine` job. Copy the format of the `ambulance` job or any other job and modify as needed.
 We would want to modify the job's **name**, **label** and **different colors**:
 ```lua
