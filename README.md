@@ -67,11 +67,11 @@ Also, you can change it on the client-side (only for you) in the Game Settings.
 ### 2. How can I add another job?
 This is a frequently asked question, and the answer is simple. For this example, we'll add job support for `beanmachine`.
 
-### - Job Config Editor
+### * Job Config Editor
 
 Head to our FL-Dispatch Config Editor Repository right [here](https://github.com/finalLy134/fl-dispatch-editor.github.io).
 
-### - Manually
+### * Manually
 
 #### A. Head to `config.lua`
 Add your new job to the `Config.Jobs` table. It should look like this:
