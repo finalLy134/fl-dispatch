@@ -63,7 +63,7 @@ This is a frequently asked question, and the answer to this is pretty simple.
 For the sake of this example, I want to add job support for `beanmachine` which is a job in my server.
 
 #### 1. Head to `config.lua`
-Here, we would want to head to Config.Jobs and add our new job to the table of jobs that are already in there.
+Here, we would want to head to `Config.Jobs` and add our new job to the table of jobs that are already in there.
 Mine looks like this now:
 ```lua
 Config.Jobs = { "police", "ambulance", "taxi", "beanmachine" }
