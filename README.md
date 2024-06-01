@@ -58,7 +58,7 @@ end
 
 ## Configuration
 
-### How can I add another job?
+- ### How can I add another job?
 This is a frequently asked question, and the answer to this is pretty simple.
 For the sake of this example, I want to add job support for `beanmachine` which is a job in my server.
 
