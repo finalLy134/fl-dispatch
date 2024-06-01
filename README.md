@@ -58,55 +58,134 @@ end
 
 ## Configuration
 
-The colors and prefixes are configurable in the `colors.json`.
+### How can I add another job?
+This is a frequently asked question, and the answer to this is pretty simple.
+For the sake of this example, I want to add job support for `beanmachine` which is a job in my server.
 
-### Default Colors
-
-In order to change the default colors simply change the `backgroundColor` `foregroundColor` as you wish.
-
-```json
-"defaultColors": {
-    "backgroundColor": "rgb(47, 69, 86)",
-    "foregroundColor": "white"
-},
+#### 1. Head to `config.lua`
+Here, we would want to head to Config.Jobs and add our new job to the table of jobs that are already in there.
+Mine looks like this now:
+```lua
+Config.Jobs = { "police", "ambulance", "taxi", "beanmachine" }
 ```
 
-### Special Colors
-
-In order to change the special colors simply change the `prefix` `backgroundColor` `foregroundColor` as you wish.
-To add more special colors, simply copy and paste as shown.
-
-```json
-"special": [
-  { # Start copying from this line
-    "prefix": "S",
-    "colors": {
-      "backgroundColor": "red",
-      "foregroundColor": "white"
-    }
-  }, # End copying here
-  + Paste New
-]
-```
-
-### Callsign Ranges
-
-In order to change the callsign ranges colors simply change the `start` `end` `backgroundColor` `foregroundColor` as you wish.
-To add more callsign ranges colors, simply copy and paste as shown.
-
-```json
-"ranges": [
-      { # Start copying from this line
-        "start": 200,
-        "end": 210,
-        "colors": {
-          "backgroundColor": "rgb(235, 1, 2)",
-          "foregroundColor": "white"
+#### 2. Head to `colors.json`
+In this file we would want to add the colors for our `beanmachine` job.
+We don't want to start writing all of the different colors from scratch. And that's why we can just copy the "template" of how other colors are created for other jobs.
+I will copy the format of the `ambulance` job:
+```lua
+"ambulance": {
+      "label": "Active EMS",
+      "colors": {
+        "backgroundColor": "red",
+        "foregroundColor": "white"
+      },
+      "ranges": [
+        {
+          "start": 1,
+          "end": 19,
+          "colors": {
+            "backgroundColor": "#2e54d1",
+            "foregroundColor": "white"
+          }
+        },
+        {
+          "start": 31,
+          "end": 39,
+          "colors": {
+            "backgroundColor": "#2e54d1",
+            "foregroundColor": "white"
+          }
+        },
+        {
+          "start": 21,
+          "end": 29,
+          "colors": {
+            "backgroundColor": "#10a9ef",
+            "foregroundColor": "white"
+          }
+        },
+        {
+          "start": 91,
+          "end": 99,
+          "colors": {
+            "backgroundColor": "#AB1150",
+            "foregroundColor": "white"
+          }
         }
-      }, # End copying here
-      + Paste New
-  ]
+      ],
+      "special": [
+        {
+          "prefix": "A",
+          "colors": {
+            "backgroundColor": "#11ab6c",
+            "foregroundColor": "white"
+          }
+        },
+        {
+          "prefix": "DELTA",
+          "colors": {
+            "backgroundColor": "#FF9700",
+            "foregroundColor": "white"
+          }
+        },
+        {
+          "prefix": "OMEGA",
+          "colors": {
+            "backgroundColor": "#EF5610",
+            "foregroundColor": "white"
+          }
+        },
+        {
+          "prefix": "PD",
+          "colors": {
+            "backgroundColor": "#DE212A",
+            "foregroundColor": "white"
+          }
+        }
+      ]
+    }
 ```
+Now we would want to change the job name, label and from here we are free to modify the colors as we wish.
+This is what I have done:
+```lua
+"beanmachine": {
+      "label": "Active Beanmachine Workers",
+      "colors": {
+        "backgroundColor": "#682900",
+        "foregroundColor": "white"
+      },
+      "ranges": [
+        {
+          "start": 1,
+          "end": 19,
+          "colors": {
+            "backgroundColor": "#003F68",
+            "foregroundColor": "white"
+          }
+        },
+        {
+          "start": 31,
+          "end": 39,
+          "colors": {
+            "backgroundColor": "#6F5900",
+            "foregroundColor": "white"
+          }
+        }
+      ],
+      "special": [
+        {
+          "prefix": "W",
+          "colors": {
+            "backgroundColor": "#50008F",
+            "foregroundColor": "white"
+          }
+        }
+      ]
+    }
+```
+Feel free to edit it as you wish until you get the result you like.
+If you have a problem with the code or you're stuck with something, feel free to copy the original content from the source code here or contact me and I will be more than happy to help you.
 
 ## Preview
 
