@@ -69,7 +69,7 @@ This is a frequently asked question, and the answer is simple. For this example,
 
 ### - Job Config Editor
 
-Head to our FL-Dispatch Config Editor Repository right [here](https://finally134.github.io/).
+Head to our FL-Dispatch Config Editor Repository right [here]([https://finally134.github.io/](https://github.com/finalLy134/fl-dispatch-editor.github.io)).
 
 ### - Manually
 
