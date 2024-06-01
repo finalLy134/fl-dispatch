@@ -117,7 +117,7 @@ Feel free to edit until you get the desired result. If you encounter any issues,
 ### 3. It shows I have an update, how can I update the script without losing my config/colors modifications?
 Simply save your current `colors.json` and `config.lua` somewhere in your computer.
 
-Install the newer version of fl-dispatch, upload it to your server resources folder and drag the older files into the newer version folder.
+Install the newer version of fl-dispatch, upload it to your server resources folder and drag the older config files into the newer version folder.
 But of course, check if there was an update to the config files and if so include the newer text content into your older version ones.
 And you're done!
 
