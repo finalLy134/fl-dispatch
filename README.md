@@ -119,7 +119,7 @@ Simply save your current `colors.json` and `config.lua` somewhere in your comput
 
 Install the newer version of fl-dispatch, upload it to your server resources folder and drag the older config files into the newer version folder.
 But of course, check if there was an update to the config files and if so include the newer text content into your older version ones.
-And you're done!
+And you're done, you have successfully updated fl-dispatch.
 
 ## Preview
 
