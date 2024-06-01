@@ -58,11 +58,12 @@ end
 
 ## FAQ
 
-### How can I change the default keybind?
+### 1. How can I change the default keybinds?
 Head to **`config.lua`** and under `Config.ToggleKey` change it to the key you desire.
-Also, you can change it on the client-side (only for you) inside the Game Settings.
 
-### How can I add another job?
+Also, you can change it on the client-side (only for you) in the Game Settings.
+
+### 2. How can I add another job?
 This is a frequently asked question, and the answer is simple. For this example, we'll add job support for `beanmachine`.
 
 #### 1. Head to `config.lua`
