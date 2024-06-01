@@ -1,6 +1,7 @@
 # fl-dispatch
 
-Event-Based Advanced QBCore Job Dispatch / 10-System,
+An Event-Based Advanced FiveM QBCore Job Dispatch / 10-System Script,
+
 Originally Made by NevoG,
 Link to old script [here](https://forum.cfx.re/t/release-fivem-advanced-active-officers/1798459).
 
@@ -48,7 +49,7 @@ end
 
 ## Keybinds
 
-- F3 - Open Active Officers List - Configurable in the `config.lua`
+- F3 - Open Active Officers List
 
 ## Commands
 
@@ -56,57 +57,62 @@ end
 - /dispatch - Toggle Menu
 - /callsign `[callsign]` - To set your callsign (QBCore Command)
 
-## Configuration
+## FAQ
 
-The colors and prefixes are configurable in the `colors.json`.
+### 1. How can I change the default keybinds?
+Head to **`config.lua`** and under `Config.ToggleKey` change it to the key you desire.
 
-### Default Colors
+Also, you can change it on the client-side (only for you) in the Game Settings.
 
-In order to change the default colors simply change the `backgroundColor` `foregroundColor` as you wish.
+### 2. How can I add another job?
+This is a frequently asked question, and the answer is simple. For this example, we'll add job support for `beanmachine`.
 
-```json
-"defaultColors": {
-    "backgroundColor": "rgb(47, 69, 86)",
-    "foregroundColor": "white"
-},
+#### A. Head to `config.lua`
+Add your new job to the `Config.Jobs` table. It should look like this:
+```lua
+Config.Jobs = { "police", "ambulance", "taxi", "beanmachine" }
 ```
 
-### Special Colors
-
-In order to change the special colors simply change the `prefix` `backgroundColor` `foregroundColor` as you wish.
-To add more special colors, simply copy and paste as shown.
-
-```json
-"special": [
-  { # Start copying from this line
-    "prefix": "S",
-    "colors": {
-      "backgroundColor": "red",
-      "foregroundColor": "white"
-    }
-  }, # End copying here
-  + Paste New
-]
-```
-
-### Callsign Ranges
-
-In order to change the callsign ranges colors simply change the `start` `end` `backgroundColor` `foregroundColor` as you wish.
-To add more callsign ranges colors, simply copy and paste as shown.
-
-```json
-"ranges": [
-      { # Start copying from this line
-        "start": 200,
-        "end": 210,
-        "colors": {
-          "backgroundColor": "rgb(235, 1, 2)",
-          "foregroundColor": "white"
+#### B. Head to `colors.json`
+Add the colors for your `beanmachine` job. Copy the format of the `ambulance` job or any other job and modify as needed.
+We would want to modify the job's **name**, **label** and **different colors**:
+```lua
+"beanmachine": {
+      "label": "Active Beanmachine Workers",
+      "colors": {
+        "backgroundColor": "#682900",
+        "foregroundColor": "white"
+      },
+      "ranges": [
+        {
+          "start": 1,
+          "end": 19,
+          "colors": {
+            "backgroundColor": "#003F68",
+            "foregroundColor": "white"
+          }
+        },
+        {
+          "start": 31,
+          "end": 39,
+          "colors": {
+            "backgroundColor": "#6F5900",
+            "foregroundColor": "white"
+          }
         }
-      }, # End copying here
-      + Paste New
-  ]
+      ],
+      "special": [
+        {
+          "prefix": "W",
+          "colors": {
+            "backgroundColor": "#50008F",
+            "foregroundColor": "white"
+          }
+        }
+      ]
+    }
 ```
+Feel free to edit until you get the desired result. If you encounter any issues, you can copy the original content from the source code or contact me for assistance.
 
 ## Preview
 
