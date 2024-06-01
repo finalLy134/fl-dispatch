@@ -69,7 +69,7 @@ Config.Jobs = { "police", "ambulance", "taxi", "beanmachine" }
 
 #### 2. Head to `colors.json`
 Add the colors for your `beanmachine` job. Copy the format of the `ambulance` job or any other job and modify as needed.
-We would to modify the job's **name**, **label** and **colors**:
+We would want to modify the job's **name**, **label** and **colors**:
 ```lua
 "beanmachine": {
       "label": "Active Beanmachine Workers",
