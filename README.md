@@ -114,6 +114,11 @@ We would want to modify the job's **name**, **label** and **different colors**:
 ```
 Feel free to edit until you get the desired result. If you encounter any issues, you can copy the original content from the source code or contact me for assistance.
 
+### 3. It shows I have an update, how can I update the script without losing my config/colors modifications?
+Simply save your current `colors.json` and `config.lua` somewhere in your computer.
+Install the newer version of fl-dispatch, upload it to your server resources folder and drag the older files into the newer version folder.
+But of course, check if there was an update to the config files and if so include the newer text content into your older version ones.
+
 ## Preview
 
 ![fl-dispatch-preview](https://github.com/finalLy134/fl-dispatch/assets/60448180/f9345bbf-a1d7-4929-92ad-e4490b4b69c9)
