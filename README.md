@@ -48,7 +48,7 @@ end
 
 ## Keybinds
 
-- F3 - Open Active Officers List - Configurable in the `config.lua`
+- F3 - Open Active Officers List
 
 ## Commands
 
@@ -56,7 +56,11 @@ end
 - /dispatch - Toggle Menu
 - /callsign `[callsign]` - To set your callsign (QBCore Command)
 
-## Configuration
+## FAQ
+
+### How can I change the default keybind?
+Head to **`config.lua`** and under `Config.ToggleKey` change it to the key you desire.
+Also, you can change it on the client-side (only for you) inside the Game Settings.
 
 ### How can I add another job?
 This is a frequently asked question, and the answer is simple. For this example, we'll add job support for `beanmachine`.
