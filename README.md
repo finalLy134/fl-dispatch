@@ -5,6 +5,10 @@ An Event-Based Advanced FiveM QBCore Job Dispatch / 10-System Script,
 Originally Made by NevoG,
 Link to old script [here](https://forum.cfx.re/t/release-fivem-advanced-active-officers/1798459).
 
+## Check out my newer 10-System!
+[Showcase Video](https://www.youtube.com/watch?v=-wyGZMr1GnU&feature=youtu.be)
+[LT-10System](https://lt-studios.tebex.io/package/6809125)
+
 ## Support
 
 <table>
