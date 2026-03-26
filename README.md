@@ -19,7 +19,7 @@ Link to old script [here](https://forum.cfx.re/t/release-fivem-advanced-active-o
         <td><img src="https://dcbadge.limes.pink/api/shield/311897788206153730" alt="" /></td>
     </tr>
         <th>Discord Server</th>
-        <td><a target="_blank" href="https://discord.gg/NrvE22w7U8"><img src="https://dcbadge.limes.pink/api/server/W8msjQaev4" alt="" /></a></td>
+        <td><a target="_blank" href="https://discord.gg/NrvE22w7U8"><img src="https://dcbadge.limes.pink/api/server/NrvE22w7U8" alt="" /></a></td>
     </tr>
 </table>
 
